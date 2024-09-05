@@ -1,0 +1,68 @@
+// main: ../../../../style.scss
+.teaser-box {
+  .teaser-img {
+  }
+}
+.grid-container {
+  --teaser-img-height: 200px;
+  --teaser-img-width: 300px;
+  --teaser-box-width: 100%;
+
+  .teaser-box {
+    display: flex;
+    flex-direction: column;
+    padding: 25px;
+    margin-bottom: 40px;
+    width: var(--teaser-box-width);
+    border: 2px solid var(--grey);
+    box-shadow: var(--box-shadow);
+
+    .teaser-img {
+      max-height: var(--teaser-img-height);
+      max-width: var(--teaser-img-width);
+      aspect-ratio: 322 / 206;
+      object-fit: cover;
+      @media screen and (min-width: $tablet) {
+        aspect-ratio: 370 / 305;
+      }
+    }
+
+    .teaser-title {
+      margin: 0;
+    }
+
+    a {
+      text-transform: none;
+    }
+
+    .teaser-content-wrapper {
+      padding: 0 1.5rem 2.5rem;
+      .teaser-content {
+        height: 100%;
+        margin-bottom: 2rem;
+        .excerpt {
+          word-break: break-word;
+        }
+      }
+    }
+    .links-container {
+      padding-top: 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  }
+
+  @media screen and (min-width: $tablet) {
+    --teaser-img-width: none;
+  }
+
+  @media screen and (min-width: $laptop) {
+    --teaser-img-height: 300px;
+  }
+
+  @media screen and (min-width: $desktop) {
+    --teaser-img-height: 200px;
+    --teaser-box-width: calc(50% - 40px);
+  }
+}

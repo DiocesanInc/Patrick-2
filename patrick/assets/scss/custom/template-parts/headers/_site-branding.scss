@@ -1,0 +1,16 @@
+// main: ../../../../../style.scss
+.site-branding {
+    .header-logo-link {
+        display: block;
+        .header-logo {
+            // height: var(--max-logo-height, calc(var(--header-height) - 2rem));
+            // max-width: auto;
+        }
+        @media screen and (min-width: $phone) {
+            .header-logo {
+                height: var(--max-logo-height, calc(var(--header-height) - 2rem));
+                max-width: none;
+            }
+        }
+    }
+}
