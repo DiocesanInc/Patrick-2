@@ -2121,6 +2121,45 @@ form .gform_body input[type=radio] {
   width: 100%;
 }
 
+.mass-times-container.grid-container {
+  --cols: 1;
+  --teaser-box-width: 100%;
+  --box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+  display: grid;
+  grid-template-columns: repeat(var(--cols), 1fr);
+  gap: 80px;
+  max-width: min(90%, 1440px);
+}
+@media screen and (min-width: 768px) {
+  .mass-times-container.grid-container {
+    --cols: 2;
+  }
+}
+.mass-times-container.grid-container .teaser-box {
+  margin-bottom: 0;
+  background: #f2f2f2;
+}
+.mass-times-container.grid-container .teaser-box .mass-times-title {
+  font-size: var(--fs-1000);
+  position: relative;
+}
+.mass-times-container.grid-container .teaser-box .mass-times-title::after {
+  content: "";
+  position: absolute;
+  height: 3px;
+  left: 30px;
+  right: 0px;
+  bottom: -15px;
+  background: var(--clr-secondary);
+}
+.mass-times-container.grid-container .teaser-box .mass-time {
+  padding-left: 30px;
+  margin-bottom: 30px;
+}
+.mass-times-container.grid-container .teaser-box .mass-time * {
+  font-size: var(--fs-800);
+}
+
 footer {
   --footer-padding-block: 25px 25px;
   --margin-top-address: 25px;
@@ -2397,19 +2436,13 @@ main .entry-header.page-header .entry-title {
   --mass-times-min-height: 100px;
   height: var(--hero-height);
   position: relative;
-  z-index: 11;
+  z-index: 10;
 }
 .hero:has(.hero-mass-times-modern) {
   height: auto;
 }
 .hero:has(.hero-mass-times-modern) .hero-slider {
-  --hero-height: calc(70vh - var(--content-inset));
   height: var(--hero-height);
-}
-@media screen and (min-width: 992px) {
-  .hero:has(.hero-mass-times-modern) .hero-slider {
-    --hero-height: calc(100vh - var(--content-inset));
-  }
 }
 .hero.has-video {
   --hero-height: auto;
@@ -3500,8 +3533,17 @@ main .entry-header.page-header .entry-title {
 .buttons-container.carousel {
   height: 35.5rem;
   perspective: 44.375rem;
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+  transform-style: preserve-3d;
+  transform-origin: 0% 50%;
 }
 .buttons-container .button {
+  height: 200px;
+  position: absolute;
+  top: 0;
+  left: 0;
   display: flex;
   flex-direction: column;
   background: #fff;

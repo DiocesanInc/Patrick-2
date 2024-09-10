@@ -22,16 +22,6 @@ function patrickStyles()
     wp_enqueue_style('font-awesome6', $file, array(), "6.1.1", "screen");
 
     /**
-     * Carousel
-     */
-    wp_enqueue_style(
-        'materialize-css',
-        'https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css',
-        array(),
-        '1.0.0',
-        'screen'
-    );
-    /**
      * Style.css
      */
     $file = get_template_directory_uri() . "/style.css";

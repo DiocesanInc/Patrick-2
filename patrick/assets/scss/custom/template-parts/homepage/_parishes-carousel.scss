@@ -4,8 +4,19 @@
         height: 35.5rem; // 568px
         -webkit-perspective: 44.375rem; // 710px
         perspective: 44.375rem; // 710px
+        overflow: hidden;
+    position: relative;
+    width: 100%;
+    -webkit-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+    -webkit-transform-origin: 0% 50%;
+    transform-origin: 0% 50%;
     }
     .button {
+        height: 200px;
+        position: absolute;
+        top: 0;
+        left: 0;
         display: flex;
         flex-direction: column;
         background: #fff;

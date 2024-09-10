@@ -1,0 +1,43 @@
+.mass-times-container.grid-container {
+  --cols: 1;
+  --teaser-box-width: 100%;
+  --box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+
+  display: grid;
+  grid-template-columns: repeat(var(--cols), 1fr);
+  gap: 80px;
+  max-width: min(90%, 1440px);
+
+  @media screen and (min-width: $tablet) {
+    --cols: 2;
+  }
+
+  .teaser-box {
+    margin-bottom: 0;
+    background: #f2f2f2;
+
+    .mass-times-title {
+      font-size: var(--fs-1000);
+      position: relative;
+
+      &::after {
+        content: "";
+        position: absolute;
+        height: 3px;
+        left: 30px;
+        right: 0px;
+        bottom: -15px;
+        background: var(--clr-secondary);
+      }
+    }
+
+    .mass-time {
+      padding-left: 30px;
+      margin-bottom: 30px;
+
+      * {
+        font-size: var(--fs-800);
+      }
+    }
+  }
+}

@@ -14,19 +14,13 @@
 
   height: var(--hero-height);
   position: relative;
-  z-index: 11;
+  z-index: 10;
 
   &:has(.hero-mass-times-modern) {
     height: auto;
 
     .hero-slider {
-      --hero-height: calc(70vh - var(--content-inset));
-
       height: var(--hero-height);
-
-      @media screen and (min-width: $laptop) {
-        --hero-height: calc(100vh - var(--content-inset));
-      }
     }
   }
 

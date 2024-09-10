@@ -18,64 +18,65 @@ get_header();
         <?php get_template_part('template-parts/headers/page-header'); ?>
 
         <?php if (get_field("use_legacy_setup", "options")): ?>
-            <?php if (have_rows("mass_times_days", "options")) : ?>
-                <div class="mass-times-container grid-container limit-width">
-                    <?php while (have_rows("mass_times_days", "options")) : the_row(); ?>
-                        <div class="mass-times-section teaser-box">
-                            <h1 class="mass-times-title">
-                                <?php echo get_sub_field("day"); ?>
-                            </h1>
-                            <?php while (have_rows("mass_times_times", "options")) : the_row(); ?>
-                                <div class="mass-time">
-                                    <div class="mass-time-day">
-                                        <?php echo get_sub_field("mass_times_label"); ?>
-                                    </div>
-                                    <div class="mass-time-time">
-                                        <?php echo get_sub_field("mass_times_time"); ?>
-                                    </div>
-                                </div>
-                            <?php endwhile; ?>
-                        </div>
-                    <?php endwhile; ?>
-
+        <?php if (have_rows("mass_times_days", "options")) : ?>
+        <div class="mass-times-container grid-container limit-width">
+            <?php while (have_rows("mass_times_days", "options")) : the_row(); ?>
+            <div class="mass-times-section teaser-box">
+                <h1 class="mass-times-title">
+                    <?php echo get_sub_field("day"); ?>
+                </h1>
+                <?php while (have_rows("mass_times_times", "options")) : the_row(); ?>
+                <div class="mass-time">
+                    <div class="mass-time-day">
+                        <?php echo get_sub_field("mass_times_label"); ?>
+                    </div>
+                    <div class="mass-time-time">
+                        <?php echo get_sub_field("mass_times_time"); ?>
+                    </div>
                 </div>
-            <?php endif;
+                <?php endwhile; ?>
+            </div>
+            <?php endwhile; ?>
+
+        </div>
+        <?php endif;
         else:
             if (have_rows("new_mass_time_repeater", "options")): ?>
-                <div class="mass-times-container grid-container limit-width">
-                    <?php while (have_rows("new_mass_time_repeater", "options")): the_row(); ?>
-                        <div class="mass-times-section teaser-box">
-                            <h2 class="mass-times-title">
+        <div class="mass-times-container grid-container limit-width">
+            <?php while (have_rows("new_mass_time_repeater", "options")): the_row(); ?>
+            <div class="mass-times-section teaser-box">
+                <h2 class="mass-times-title">
 
-                                <?php echo get_sub_field("title"); ?>
-                            </h2>
+                    <?php echo get_sub_field("title"); ?>
+                </h2>
 
-                            <?php while (have_rows("times_repeater", "options")): the_row(); ?>
-                                <div class="mass-time">
-                                    <div class="mass-time-time">
-                                        <?php echo get_sub_field("time"); ?>
-                                        <?php if (get_sub_field("end_time")): ?>
-                                            - <?php echo get_sub_field("end_time"); ?>
-                                        <?php endif; ?>
-                                        <?php if (get_sub_field("language")): ?>
-                                            <em>
-                                                (<?php echo get_sub_field("language"); ?>)
-                                            </em>
-                                        <?php endif; ?>
-                                        <?php if (get_sub_field("note")): ?>
-                                            <ul>
-                                                <li>
-                                                    <?php echo get_sub_field("note"); ?>
-                                                </li>
-                                            </ul>
-                                        <?php endif; ?>
+                <?php while (have_rows("times_repeater", "options")): the_row(); ?>
+                <div class="mass-time">
+                    <div class="mass-time-time">
+                        <?php echo get_sub_field("time"); ?>
 
-                                    </div>
-                                </div>
-                            <?php endwhile; ?>
+                        <?php if (get_sub_field("end_time")): ?>
+                        - <?php echo get_sub_field("end_time"); ?>
+                        <?php endif; ?>
+
+                        <?php if (get_sub_field("language")): ?>
+                        <em>
+                            (<?php echo get_sub_field("language"); ?>)
+                        </em>
+                        <?php endif; ?>
+
+                        <?php if (get_sub_field("note")): ?>
+                        <div>
+                            * <?php echo get_sub_field("note"); ?>
                         </div>
-                    <?php endwhile; ?>
+                        <?php endif; ?>
+
+                    </div>
                 </div>
+                <?php endwhile; ?>
+            </div>
+            <?php endwhile; ?>
+        </div>
         <?php endif;
         endif; ?>
         <div class="limit-width">
