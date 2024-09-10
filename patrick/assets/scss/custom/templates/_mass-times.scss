@@ -8,7 +8,7 @@
   gap: 80px;
   max-width: min(90%, 1440px);
 
-  @media screen and (min-width: $tablet) {
+  @media screen and (min-width: $laptop) {
     --cols: 2;
   }
 
@@ -24,7 +24,7 @@
         content: "";
         position: absolute;
         height: 3px;
-        left: 30px;
+        left: 0px;
         right: 0px;
         bottom: -15px;
         background: var(--clr-secondary);
@@ -37,6 +37,11 @@
 
       * {
         font-size: var(--fs-800);
+      }
+
+      .note {
+        margin-left: 15px;
+        font-size: var(--fs-700);
       }
     }
   }

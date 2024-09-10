@@ -2130,7 +2130,7 @@ form .gform_body input[type=radio] {
   gap: 80px;
   max-width: min(90%, 1440px);
 }
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 992px) {
   .mass-times-container.grid-container {
     --cols: 2;
   }
@@ -2147,7 +2147,7 @@ form .gform_body input[type=radio] {
   content: "";
   position: absolute;
   height: 3px;
-  left: 30px;
+  left: 0px;
   right: 0px;
   bottom: -15px;
   background: var(--clr-secondary);
@@ -2158,6 +2158,10 @@ form .gform_body input[type=radio] {
 }
 .mass-times-container.grid-container .teaser-box .mass-time * {
   font-size: var(--fs-800);
+}
+.mass-times-container.grid-container .teaser-box .mass-time .note {
+  margin-left: 15px;
+  font-size: var(--fs-700);
 }
 
 footer {

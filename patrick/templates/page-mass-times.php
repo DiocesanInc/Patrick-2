@@ -60,13 +60,13 @@ get_header();
                         <?php endif; ?>
 
                         <?php if (get_sub_field("language")): ?>
-                        <em>
+                        <em class="language">
                             (<?php echo get_sub_field("language"); ?>)
                         </em>
                         <?php endif; ?>
 
                         <?php if (get_sub_field("note")): ?>
-                        <div>
+                        <div class="note">
                             * <?php echo get_sub_field("note"); ?>
                         </div>
                         <?php endif; ?>
