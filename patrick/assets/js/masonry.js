@@ -5,7 +5,9 @@ jQuery(document).ready(function ($) {
       gutter: 40,
     });
   });
-
+  $('.ministry-container.taxonomy-container .ui-accordion').bind('accordionchange', function(event, ui) {
+    $('.ministry-container.taxonomy-container').masonry();
+  });
   // const $grid2 = $(
   //   ".mass-times-container.grid-container"
   // ).masonry({
