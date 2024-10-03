@@ -32,7 +32,7 @@
     </div>
     <?php endwhile; ?>
     <?php
-        $massTimesVersion = get_field("use_new_setup", "options") ? "legacy" : "modern";
+        $massTimesVersion = get_field("use_legacy_setup", "options") ? "legacy" : "modern";
         get_template_part("template-parts/homepage/hero", "mass-times-$massTimesVersion");
         ?>
 
