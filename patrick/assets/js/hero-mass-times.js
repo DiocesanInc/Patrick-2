@@ -3,7 +3,7 @@ jQuery(function ($) {
     const dropdownToggle = $(this);
     const dropdownId = dropdownToggle.attr("data-dropdown");
     const dropdownContainer = $(
-      `.mass-times-dropdown-container[data-dropdown=${dropdownId}]`
+      `.mass-times-dropdown-container[data-dropdown='${dropdownId}']`
     );
 
     // Close all other dropdowns before opening the current one
