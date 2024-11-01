@@ -11,13 +11,17 @@
 $group = get_the_terms(get_post(), "ministry-group")[0];
 
 $contacts = get_field("contacts");
+$isContact = '';
+if($contacts):
+    $isContact = ' has-contact';
+endif;
 
 if($group):
 $backlink = get_field("ministry_is_slider", getMinistryPostObject()) ? get_permalink(getMinistryPostObject()) : get_term_link($group->term_id);
 endif;
 ?>
 
-<article class="entry-content limit-width single-ministry-article">
+<article class="entry-content limit-width single-ministry-article<?= $isContact;?>">
     <div class="the-content">
         <?php the_content(); ?>
         <div class="back-button-container align-center">
