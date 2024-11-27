@@ -17,9 +17,9 @@ $content = get_field("mission_content");
 
 <div class="mission-container limit-width">
     <?php if ($header) : ?>
-        <h3 class="mission-header">
+        <h2 class="mission-header">
             <?php echo $header; ?>
-        </h3>
+        </h2>
     <?php endif; ?>
     <div class="mission-content-wrapper <?php echo $position; ?>">
         <?php if ($image) : ?>
