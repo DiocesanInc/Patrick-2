@@ -73,7 +73,7 @@ $contactFormId = get_field("ministry_contact_form_id", "options") ? get_field("m
                 <h3>Interested?</h3>
                 <p>Let us know and we will get back to you.</p>
                 <div class="contact-form">
-                    <?php echo do_shortcode("[gravityform id='$formId' title='false' description='false' ajax='true']"); ?>
+                    <?php echo do_shortcode("[gravityform id='$formId[id]' title='false' description='false' ajax='true']"); ?>
                 </div>
             </div>
         <?php endif; ?>
