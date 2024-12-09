@@ -4,7 +4,7 @@ Theme URI: http://underscores.me/
 Author: Diocesan
 Author URI: http://underscores.me/
 Description: A boilerplate template to base new hybrids on
-Version: 1.1.8
+Version: 1.1.8.1
 Tested up to: 5.4
 Requires PHP: 5.6
 License: GNU General Public License v2 or later
@@ -3294,7 +3294,11 @@ main .entry-header.page-header .entry-title {
   text-align: center;
   margin-block: 0 50px;
 }
-.testimonials-container .slick-track {
+.testimonials-container .slick-list {
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+.testimonials-container .slick-list .slick-track {
   display: flex;
   align-items: center;
 }
