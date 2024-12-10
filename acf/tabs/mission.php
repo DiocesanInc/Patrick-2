@@ -24,7 +24,7 @@ function acf_mission()
             'label' => 'Mission Header',
             'name' => 'mission_header',
             'type' => 'text',
-            'instructions' => '*Max 50 Characters',
+            'instructions' => '*Max 55 Characters',
             'required' => 0,
             'conditional_logic' => 0,
             'wrapper' => array(
@@ -36,7 +36,7 @@ function acf_mission()
             'placeholder' => '',
             'prepend' => '',
             'append' => '',
-            'maxlength' => 50,
+            'maxlength' => 55,
         ),
         array(
             'key' => 'field_623a1c6e4f924',

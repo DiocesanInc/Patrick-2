@@ -34,7 +34,8 @@ $contactFormId = get_field("ministry_contact_form_id", "options") ? get_field("m
                 )
             ),
             "orderby" => "title",
-            "order" => "ASC"
+            "order" => "ASC",
+            "posts_per_page" => -1
         );
 
         $ministries = get_posts($args);
