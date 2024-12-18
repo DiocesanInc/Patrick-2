@@ -17,6 +17,9 @@ get_header();
     <main class="site-main page-template-mass-times" id="main">
         <?php get_template_part('template-parts/headers/page-header'); ?>
 
+        <div class="limit-width">
+            <?php the_content(); ?>
+        </div>
         <?php if (get_field("use_legacy_setup", "options")): ?>
         <?php if (have_rows("mass_times_days", "options")) : ?>
         <div class="mass-times-container grid-container limit-width">
@@ -79,9 +82,6 @@ get_header();
         </div>
         <?php endif;
         endif; ?>
-        <div class="limit-width">
-            <?php the_content(); ?>
-        </div>
     </main>
 </div>
 
