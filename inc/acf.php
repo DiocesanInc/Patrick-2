@@ -86,6 +86,7 @@ if (acfIsInstalled()) {
         }
 
         load_acf_file("homepage");
+        load_acf_file("ministry-group-order");
         load_acf_file("theme-settings");
     }
 }
