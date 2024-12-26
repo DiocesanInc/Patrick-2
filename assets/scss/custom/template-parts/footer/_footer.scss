@@ -64,6 +64,7 @@ footer {
         .email {
             grid-area: email;
             margin-top: 10px;
+            text-align: center;
             a {
                 word-break: break-all;
             }
@@ -161,6 +162,9 @@ footer {
 
         .footer-contact {
             justify-items: start;
+            .email {
+                text-align: left;
+            }
         }
 
         .footer-social-media {

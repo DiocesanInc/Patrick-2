@@ -131,7 +131,7 @@ function theDefaultPostThumbnail($html = null, $post_id = null, $post_thumbnail_
 
 function getMinistryPostObject()
 {
-    return get_field("ministries", "options")["ministry_groups_back_button"];
+    return get_field("ministries", "options")["ministry_groups_back_button"] ?? '';
 }
 
 if (!function_exists("my_form_submit_button")) {
