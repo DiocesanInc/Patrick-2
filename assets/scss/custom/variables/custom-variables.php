@@ -307,6 +307,20 @@ $variables->addCssRule(
 );
 
 $variables->addCssRule(
+    "footer .social-media-link a",
+    array(
+        "color" => get_field("footer_social_color", "options") ? get_field("footer_social_color", "options") : get_field("footer_link_color", "options")
+    )
+);
+
+$variables->addCssRule(
+    "footer .social-media-link a:hover",
+    array(
+        "color" => get_field("footer_social_color_hover", "options") ? get_field("footer_social_color_hover", "options") : get_field("footer_link_color_hover", "options")
+    )
+);
+
+$variables->addCssRule(
     "footer a",
     array(
         "color" => get_field("footer_link_color", "options"),

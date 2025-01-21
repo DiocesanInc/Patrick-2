@@ -24,9 +24,13 @@ function patrickStyles()
     /**
      * Style.css
      */
-    $file = get_template_directory_uri() . "/style.css";
-    $hash = filemtime($file);
-    wp_enqueue_style('main-styles', $file, array(), $hash, "screen");
+    // $file = get_template_directory_uri() . "/style.css";
+    // $hash = filemtime($file);
+    // wp_enqueue_style('main-styles', $file, array(), $hash, "screen");
+        $file_url = get_template_directory_uri() . "/style.css";
+        $file = get_template_directory() . "/style.css";
+        $hash = filemtime($file);
+        wp_enqueue_style('main-styles', $file_url, array(), $hash, "screen");
 
     /**
      * Ministry Lightbox Contact Form Styles
@@ -79,8 +83,9 @@ if (!function_exists("includeCustomVariables")) {
         if (class_exists("CssHelper") && file_exists(WP_PLUGIN_DIR . "/css-helper/patrick-custom-variables.css")) {
             \CssHelper::enqueueCssFile("patrick-custom-variables");
         } else {
-            $filepath = get_template_directory_uri() . "/custom-variables.css";
-            wp_enqueue_style("theme-variables", $filepath, array(), filemtime($filepath), "screen");
+            $file_url = get_template_directory_uri() . "/custom-variables.css";
+            $filepath = get_template_directory() . "/custom-variables.css";
+            wp_enqueue_style("theme-variables", $file_url, array(), filemtime($filepath), "screen");
         }
     }
     add_action('wp_enqueue_scripts', 'includeCustomVariables');
