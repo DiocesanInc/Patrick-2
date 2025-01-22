@@ -171,7 +171,7 @@ footer {
             margin-top: 0;
 
             .footer-logo {
-                max-width: 150px;
+                max-width: var(--max-logo-width);
                 margin-top: var(--margin-top-address);
                 margin-inline: auto;
                 display: block;

@@ -284,7 +284,8 @@ $variables->addCssRule(
 $variables->addCssRule(
     ":root",
     array(
-        "--max-logo-height" => get_field("max_logo_height", "options") . "px"
+        "--max-logo-height" => get_field("max_logo_height", "options") . "px",
+        "--max-logo-width" => get_field("max_logo_width", "options") . "px"
     )
 );
 
