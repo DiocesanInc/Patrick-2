@@ -16,7 +16,7 @@
     <?php while (have_rows("featured_content_items")) : the_row(); ?>
     <?php $bgImg = get_sub_field("image")["url"]; ?>
 
-    <a href="<?php echo get_sub_field("link")["url"]; ?>" class="featured-content-item-wrapper"
+    <a href="<?php echo get_sub_field("link")["url"]; ?>" target="<?php echo get_sub_field("link")["target"]; ?>" class="featured-content-item-wrapper"
         style="background-image:url(<?php echo $bgImg; ?>)">
         <div class="featured-content-heading-wrapper">
             <?php echo get_sub_field("item_name"); ?>
