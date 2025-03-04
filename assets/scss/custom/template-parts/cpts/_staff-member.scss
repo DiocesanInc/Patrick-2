@@ -9,6 +9,12 @@
         height: 100%;
         aspect-ratio: 2 / 2;
         object-fit: cover;
+        
+    @media screen and (max-width: $tablet) {
+        &.safari {
+            height: auto;
+        }
+    }
     }
     .staff-member-info {
         background: var(--clr-secondary);
