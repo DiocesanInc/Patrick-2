@@ -5,7 +5,7 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
  *
- * @package Adalbert
+ * @package Patrick
  */
 
 get_header();
@@ -20,7 +20,7 @@ get_header();
             
             if (have_posts()) :
 
-                get_template_part("/template-parts/headers/page-header", null, array("headerImg" => get_field('post_category_image',$term) ? get_field('post_category_image',$term) : get_field("default_featured_image", "options"), "headline" => $headline)); ?>
+                get_template_part("/template-parts/headers/page-header", null, array("headerImg" => get_field("default_featured_image", "options"), "headline" => $headline)); ?>
 
     <div class="grid-container limit-width">
         <?php
@@ -75,7 +75,7 @@ get_header();
 
 
 
-    <?php the_posts_navigation();
+    <?php //the_posts_navigation();
 
             else :
 
