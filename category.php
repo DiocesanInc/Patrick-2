@@ -56,7 +56,7 @@ get_header();
                             'post__not_in' => get_option('sticky_posts'), 
                             'category_name' => $catSlug, 
                             "order_by" => "menu_order", 
-                            "order" => "ASC"
+                            "order" => "DESC"
                         )
                     );
 
