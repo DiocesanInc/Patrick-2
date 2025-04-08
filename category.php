@@ -33,7 +33,7 @@ get_header();
                             array(
                                 'post__in' => get_option('sticky_posts'), 
                                 'category_name' => $catSlug, 
-                                "order_by" => "menu_order", 
+                                "order_by" => "date menu_order", 
                                 "order" => "DESC"
                             )
                         );
@@ -55,7 +55,7 @@ get_header();
                         array(
                             'post__not_in' => get_option('sticky_posts'), 
                             'category_name' => $catSlug, 
-                            "order_by" => "menu_order", 
+                            "order_by" => "date menu_order", 
                             "order" => "DESC"
                         )
                     );
