@@ -4,6 +4,6 @@ jQuery(document).ready(function ($) {
                     navigator.userAgent.indexOf('CriOS') == -1 &&
                     navigator.userAgent.indexOf('FxiOS') == -1;
     if(is_safari){
-	    $('.archive .staff-member-image').addClass('safari');
+	    $('.archive .staff-member-image, .ministry-image-wrapper .teaser-img').addClass('safari');
     }
 });
