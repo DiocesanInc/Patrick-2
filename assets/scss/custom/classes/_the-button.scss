@@ -1,4 +1,5 @@
-.the-button {
+.the-button,
+.wp-block-button__link.the-button {
     background: var(--button-background-color, var(--clr-quaternary));
     color: var(--button-font-color, white);
     padding: 0.4rem 1rem;

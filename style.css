@@ -1271,7 +1271,8 @@ a {
   opacity: 0.75;
 }
 
-.the-button {
+.the-button,
+.wp-block-button__link.the-button {
   background: var(--button-background-color, var(--clr-quaternary));
   color: var(--button-font-color, white);
   padding: 0.4rem 1rem;
@@ -1287,7 +1288,9 @@ a {
   position: relative;
   border-radius: 5px;
 }
-.the-button:hover, .the-button:focus {
+.the-button:hover, .the-button:focus,
+.wp-block-button__link.the-button:hover,
+.wp-block-button__link.the-button:focus {
   text-decoration: none;
   background: var(--button-background-color-hover, white);
   color: var(--button-font-color-hover, var(--clr-quaternary));
@@ -1295,7 +1298,8 @@ a {
   transform: var(--scale);
   font-weight: bold;
 }
-.the-button::after {
+.the-button::after,
+.wp-block-button__link.the-button::after {
   content: "";
   position: absolute;
   width: 60px;
@@ -1304,10 +1308,12 @@ a {
   border-radius: 50%;
   opacity: 0;
 }
-.the-button.clicked::after {
+.the-button.clicked::after,
+.wp-block-button__link.the-button.clicked::after {
   animation: button-click 0.3s forwards;
 }
-.the-button:focus::after {
+.the-button:focus::after,
+.wp-block-button__link.the-button:focus::after {
   animation: button-click 0.3s forwards;
 }
 
