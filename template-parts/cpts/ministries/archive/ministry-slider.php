@@ -82,7 +82,7 @@ $contactFormId = get_field("ministry_contact_form_id", "options") ? get_field("m
         <h4 class="lightbox-title"></h4>
         <div class="lightbox-excerpt"></div>
         <div class="lightbox-contact-persons"></div>
-        <?php if ($formId = get_field("ministries", "options")["ministry_contact_form"]) : ?>
+        <?php if ($formId = get_field("ministries", "options")["ministry_contact_form"] ?? '') : ?>
             <div class="contact-form-wrapper">
                 <h3>Interested?</h3>
                 <p>Let us know and we will get back to you.</p>
