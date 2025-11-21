@@ -53,27 +53,43 @@ $contactFormId = get_field("ministry_contact_form_id", "options") ? get_field("m
 
         $ministries = get_posts($args);
     ?>
-        <div class="ministry-group same-height">
-            <h2><?php echo $group->name; ?></h2>
-            <?php foreach ($ministries as $ministry) :
-                $excerpt = $ministry->post_excerpt ? $ministry->post_excerpt : $ministry->post_content;
-                $contactFormId = get_field("ministry_lightbox_contact_form", "options") ? get_field("ministry_lightbox_contact_form", "options")["id"] : 1;
+    <div class="ministry-group same-height">
+        <h2><?php echo $group->name; ?></h2>
+        <?php foreach ($ministries as $ministry) :
+
                 $thumbnail = has_post_thumbnail($ministry) ? get_the_post_thumbnail_url($ministry) : get_field("default_featured_image", "options");
+                if (!get_field("ministry_lightbox")) :
+                    $excerpt = $ministry->post_excerpt ? $ministry->post_excerpt : $ministry->post_content;
+                    $contactFormId = get_field("ministry_lightbox_contact_form", "options") ? get_field("ministry_lightbox_contact_form", "options")["id"] : 1;
             ?>
-                <div class="ministry-wrapper teaser-box" data-excerpt="<?php echo wp_trim_words($excerpt, 25); ?>" data-title="<?php echo $ministry->post_title; ?>" data-image="<?php echo $thumbnail; ?>" data-link="<?php echo get_the_permalink($ministry); ?>" data-contact="<?php echo ""; ?>">
-                    <div class=" ministry-image-wrapper">
-                        <img class="teaser-img" src="<?php echo $thumbnail; ?>" />
-                    </div>
-                    <div class="teaser-content-wrapper">
-                        <h3 class="teaser-title"><?php echo $ministry->post_title ?></h3>
-                    </div>
-                </div>
-
-
-            <?php endforeach; ?>
+        <div class="ministry-wrapper teaser-box" data-excerpt="<?php echo wp_trim_words($excerpt, 25); ?>"
+            data-title="<?php echo $ministry->post_title; ?>" data-image="<?php echo $thumbnail; ?>"
+            data-link="<?php echo get_the_permalink($ministry); ?>" data-contact="<?php echo ""; ?>">
+            <div class=" ministry-image-wrapper">
+                <img class="teaser-img" src="<?php echo $thumbnail; ?>" />
+            </div>
+            <div class="teaser-content-wrapper">
+                <h3 class="teaser-title"><?php echo $ministry->post_title ?></h3>
+            </div>
         </div>
+        <?php else : ?>
+        <a href="<?php echo get_the_permalink($ministry); ?>" class="ministry-wrapper teaser-box">
+            <div class=" ministry-image-wrapper">
+                <img class="teaser-img" src="<?php echo $thumbnail; ?>" />
+            </div>
+            <div class="teaser-content-wrapper">
+                <h3 class="teaser-title"><?php echo $ministry->post_title ?></h3>
+            </div>
+        </a>
+        <?php endif; ?>
+
+
+        <?php endforeach; ?>
+    </div>
     <?php endforeach; ?>
 </div>
+
+<?php if (!get_field("ministry_lightbox")) : ?>
 <div class="lightbox-overlay"></div>
 <div id="ministry-lightbox" class="lightbox">
     <div class="lightbox-close"></div>
@@ -83,14 +99,15 @@ $contactFormId = get_field("ministry_contact_form_id", "options") ? get_field("m
         <div class="lightbox-excerpt"></div>
         <div class="lightbox-contact-persons"></div>
         <?php if ($formId = get_field("ministries", "options")["ministry_contact_form"] ?? '') : ?>
-            <div class="contact-form-wrapper">
-                <h3>Interested?</h3>
-                <p>Let us know and we will get back to you.</p>
-                <div class="contact-form">
-                    <?php echo do_shortcode("[gravityform id='$formId[id]' title='false' description='false' ajax='true']"); ?>
-                </div>
+        <div class="contact-form-wrapper">
+            <h3>Interested?</h3>
+            <p>Let us know and we will get back to you.</p>
+            <div class="contact-form">
+                <?php echo do_shortcode("[gravityform id='$formId[id]' title='false' description='false' ajax='true']"); ?>
             </div>
+        </div>
         <?php endif; ?>
         <div class="lightbox-link"></div>
     </div>
 </div>
+<?php endif; ?>
