@@ -1,5 +1,8 @@
 // main: ../../../../../style.scss
 .site-branding {
+    @media screen and (min-width: $desktop){
+        transform: translateY(-50%);
+    }
     .header-logo-link {
         display: block;
         .header-logo {
@@ -13,4 +16,8 @@
             }
         }
     }
+}
+
+.sticky .site-branding {
+    transform: none;
 }

@@ -36,11 +36,16 @@ $staffImage = has_post_thumbnail() ? get_the_post_thumbnail_url() : getField("de
                 </a>
                 <?php endif; ?>
 
-                <?php if (get_field("email")) : ?>
+                <?php if (!get_field("has_link") && get_field("email")) : ?>
                 <a href="mailto:<?php echo get_field("email"); ?>" class="staff-member-email">
                     Email
                 </a>
+                <?php elseif (get_field("has_link") && get_field("link")) : ?>
+                <a title="<?php the_title(); ?>" href="<?php echo get_field("link")["url"]; ?>">
+                    <i class="fa-solid fa-link"></i>
+                </a>
                 <?php endif; ?>
+
             </div>
 
         </div>
