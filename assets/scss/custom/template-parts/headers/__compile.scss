@@ -4,11 +4,16 @@
     width: 100%;
     height: var(--header-height);
     z-index: 20;
-    padding-top: 1.5rem;
-    @media screen and (min-width: $desktop){
+    // padding-top: 1.5rem;
     padding-top: 3.5rem;
+    @media screen and (min-width: $desktop){
+    // padding-top: 3.5rem;
     }
     transition: background 0.3s ease, padding 0.3s ease;
+
+    .the-header {
+        background: var(--sticky-menu-top-level-default-bg-color, transparent);
+    }
 
     .header-logo-sticky {
         display: none;
@@ -23,6 +28,9 @@
         .header-logo-sticky {
             display: block;
         }
+        // .header-nav .site-branding {
+        //     transform: none;
+        // }
     }
 
     @import "bar";
