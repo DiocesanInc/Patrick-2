@@ -5,7 +5,8 @@ jQuery(document).ready(function ($) {
 
   /** Hero Slider */
   $(".page-template-homepage .hero-slider").slick({
-    autoplay: 3000,
+    autoplay: true,
+    autoplaySpeed: 3000,
     arrows: true,
     cssEase: "linear",
     dots: false,
