@@ -12,7 +12,7 @@
     transition: background 0.3s ease, padding 0.3s ease;
 
     .the-header {
-        background: var(--sticky-menu-top-level-default-bg-color, transparent);
+        background: var(--menu-top-level-default-bg-color, transparent);
     }
 
     .header-logo-sticky {
