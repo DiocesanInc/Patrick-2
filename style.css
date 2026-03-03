@@ -4,7 +4,7 @@ Theme URI: http://underscores.me/
 Author: Diocesan
 Author URI: http://underscores.me/
 Description: A boilerplate template to base new hybrids on
-Version: 1.3.1.2
+Version: 1.3.2
 Tested up to: 5.4
 Requires PHP: 5.6
 License: GNU General Public License v2 or later
@@ -1468,6 +1468,16 @@ form.search-form .search-submit:hover {
   .wp-block-media-text.is-stacked-on-mobile .wp-block-media-text__content {
     grid-column: 1;
     grid-row: 2;
+  }
+}
+@media screen and (max-width: 768px) {
+  .wp-block-buttons > .wp-block-button.wp-block-button__width-25 {
+    width: calc(50% - var(--wp--style--block-gap, 0.5em) * 0.75);
+  }
+}
+@media screen and (max-width: 426px) {
+  .wp-block-buttons > .wp-block-button.has-custom-width {
+    width: 100%;
   }
 }
 .wp-block-table td {
