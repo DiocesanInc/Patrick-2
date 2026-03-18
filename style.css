@@ -4031,6 +4031,9 @@ main .entry-header.page-header .entry-title {
 .single-ministry .single-container {
   flex-wrap: wrap;
 }
+.single-ministry .single-container .back-button-container {
+  margin-top: 2rem;
+}
 .single-ministry .single-container .contact-persons-container {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
